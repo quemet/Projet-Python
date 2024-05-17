@@ -8,8 +8,93 @@
 
 Crée une application de calculatrice en ligne de commande qui peut effectuer des opérations de base comme l'addition, la soustraction, la multiplication et la division.
 
-@todo Voici une explication plus concrète du projet.
-@todo Voici ma solution.
+@todo Voici une explication plus concrète du projet.  
+Voici ma solution.
+
+[Fichier python](./Calculatrice/calculatrice.py)
+
+```python
+# Fonction qui retourne l'addition de deux nombres
+def addition(x, y):
+
+    # retourne l'addition de x et y
+    return x + y
+
+# Fonction qui retourn la soustraction de deux nombres
+def soustraction(x, y):
+
+    # retourne la soustraction de x et y
+    return x - y
+
+# Fonction qui retourne la multiplication de deux nombres
+def multiplication(x, y):
+
+    # retourne la multiplication de x et y
+    return x * y
+
+# Fonction qui retourne la division de deux nombres
+def division(x, y):
+
+    # retourne la division de x et y si y n'est pas équal à y
+    return x / y if y != 0 else "Erreur : Division par zéro."
+
+# Fonction pour afficher les choix qui s'offrent à l'utilisateur
+def afficher_menu():
+    print("Bienvenue dans ma calculatrice") 
+    print("")
+    print("Veuillez sélectionner une opération")
+    print("")
+    print("1 - Addition")
+    print("2 - Soustraction")
+    print("3 - Multiplication")
+    print("4 - Division")
+    print("5 - Quitter")
+
+# Boucle infini pour la boucle du jeu
+while True:
+
+    # Appelle la fonction pour afficher le menu
+    afficher_menu()
+
+    # Demande à l'utilisateur de faire un choix
+    choix = input("Entre votre choix (1/2/3/4/5): ")
+    
+    # Si le choix est 5 alors on quitte l'application
+    if choix == '5':
+        print('Au revoir')
+        break
+
+    # Si le choix est 1 2 3 4 on affiche le résultat de l'opération arithmétique correspondante
+    if choix in ['1', '2', '3', '4']:
+
+        # On essaie d'éxecuter le code suivant si il n'emmet pas d'erreur on quitte le jeu
+        try:
+
+            # On essaie de transformer le input de l'utilisateur en float
+            n1 = float(input("Entrer le chiffre numéro 1 :"))
+
+            # On essaie de transformer le input de l'utilisateur en float
+            n2 = float(input("Entrer le chiffre numéro 2 :"))
+
+            # On check le choix si c'est l'un d'eux alors on effectue la opération adéquate
+            if choix == '1':
+                print(f"Le résultat de l'addition de {n1} et de {n2} == {addition(n1, n2)}")
+            elif choix == '2':
+                print(f"Le résultat de la soustraction de {n1} et de {n2} == {soustraction(n1, n2)}")
+            elif choix == '3':
+                print(f"Le résultat de la multiplication de {n1} et de {n2} == {multiplication(n1, n2)}")
+            else:
+                print(f"Le résultat de la division de {n1} et de {n2} == {division(n1, n2)}")
+
+        # On léve une exception si une erreur est survenue
+        except:
+            print("Le choix est invalide")
+    # Si aucun des choix est valide alors on emmet une erreur
+    else:
+        print("Choix invalide. Essayez de nouveau.")
+
+
+```
 
 ### Jeu du Devine le Nombre :
 
@@ -41,6 +126,7 @@ Permets à l'utilisateur d'ajouter, marquer comme terminées et supprimer des t�
 ### Chat en Temps Réel :
 
 Utilise des bibliothèques comme socket et threading pour créer une application de chat en temps réel. Implémente à la fois le serveur et le client.
+
 ### Jeu de la Vie de Conway :
 
 Programme le célèbre "Jeu de la vie" de John Conway en utilisant une bibliothèque comme Pygame pour visualiser les évolutions des cellules.

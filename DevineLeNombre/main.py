@@ -1,6 +1,5 @@
 import random
 
-
 com_number = random.randint(1, 100)
 user_life = 5
 
